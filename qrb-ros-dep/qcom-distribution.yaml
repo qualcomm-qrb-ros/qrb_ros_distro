@@ -1,0 +1,12 @@
+libqnn1:
+  ubuntu:
+    noble: [libqnn1]
+libqnn-dev:
+  ubuntu:
+    noble: [libqnn-dev]
+libtensorflow-lite-c-qcom1:
+  ubuntu:
+    noble: [libtensorflow-lite-c-qcom1]
+libtensorflow-lite-qcom-dev:
+  ubuntu:
+    noble: [libtensorflow-lite-qcom-dev]
