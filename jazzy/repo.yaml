@@ -3,14 +3,6 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/lib_mem_dmabuf
     version: release/1.1.0
-  qrb_ros_docker:
-    type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_docker
-    version: main
-  qrb_ros_imu:
-    type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_imu
-    version: main
   qrb_ros_interfaces:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_interfaces
@@ -18,7 +10,7 @@ repositories:
   qrb_ros_nn_inference:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_nn_inference
-    version: main
+    version: release/1.1.0
   qrb_ros_system_monitor:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_system_monitor
