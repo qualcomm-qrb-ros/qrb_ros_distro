@@ -43,3 +43,6 @@ qrb_ros_yolo_process:
 qrb_ros_tensor_list_msgs:
   ubuntu:
     noble: [ros-jazzy-qrb-ros-tensor-list-msgs]
+qrb_colorspace_convert_lib:
+  ubuntu:
+    noble: [ros-jazzy-qrb-colorspace-convert-lib]
