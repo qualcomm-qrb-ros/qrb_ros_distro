@@ -43,3 +43,6 @@ qrb_ros_yolo_process:
 qrb_ros_tensor_list_msgs:
   ubuntu:
     noble: [ros-jazzy-qrb-ros-tensor-list-msgs]
+qrb_ros_vision_msgs:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-vision-msgs]
