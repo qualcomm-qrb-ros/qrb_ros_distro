@@ -66,9 +66,11 @@ jobs:
         with:
           fetch-depth: 0
           path: ${{ github.workspace }}/${{ github.event.repository.name }}
-          ref: ${{ github.event_name == 'schedule' && 'develop' || github.head_ref || github.ref_name }}
+          ref: ${{ github.event_name == 'schedule' && 'develop' || github.event_name == 'workflow_dispatch'  && 'develop' || null }}
 
       - name: Sync and build
+        id: sync_and_build
+        continue-on-error: true
         run: |
           ls ${{ github.workspace }}
           export PATH=/home/ubuntu/.local/bin:$PATH
@@ -116,6 +118,10 @@ jobs:
             -DCMAKE_PREFIX_PATH="$(pwd)/install/share" \
             -DBUILD_TESTING=OFF
 
+          if [ $? -ne 0 ]; then
+            echo "::error::Build Failed!"
+          fi
+
       - name: Stage build artifacts for publishing
         continue-on-error: true
         run: |
@@ -130,3 +136,10 @@ jobs:
         with:
           path: ./uploads
           fileserver_url: "https://quic-qrt-ros-fileserver-1029608027416.us-central1.run.app"
+
+      - name: Set failed status
+        run: |
+          if [[ "${{ steps.sync_and_build.outcome }}" == "failure" ]];then
+            echo "::error::Critical task (Step: Sync and build) failed! Forcing Job failure."
+            exit 1
+          fi

@@ -1,29 +1,73 @@
 repositories:
+  dmabuf_transport:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/dmabuf_transport.git
+    version: main
   lib_mem_dmabuf:
     type: git
-    url: https://github.com/qualcomm-qrb-ros/lib_mem_dmabuf
+    url: https://github.com/qualcomm-qrb-ros/lib_mem_dmabuf.git
     version: main
-  qrb_ros_docker:
+  libqrc:
     type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_docker
+    url: https://github.com/qualcomm-qrb-ros/libqrc.git
+    version: main
+  qrb_ros_amr_service:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_amr_service.git
+    version: main
+  # qrb_ros_audio_service:
+  #   type: git
+  #   url: https://github.com/qualcomm-qrb-ros/qrb_ros_audio_service.git
+  #   version: main
+  qrb_ros_battery:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_battery.git
+    version: main
+  # qrb_ros_benchmark:
+  #   type: git
+  #   url: https://github.com/qualcomm-qrb-ros/qrb_ros_benchmark.git
+  #   version: main
+  qrb_ros_color_space_convert:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_color_space_convert.git
+    version: main
+  qrb_ros_follow_path_service:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_follow_path_service.git
     version: main
   qrb_ros_imu:
     type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_imu
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_imu.git
     version: main
   qrb_ros_interfaces:
     type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_interfaces
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_interfaces.git
     version: main
   qrb_ros_nn_inference:
     type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_nn_inference
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_nn_inference.git
+    version: main
+  qrb_ros_robot_base:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_robot_base.git
+    version: main
+  qrb_ros_samples:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_samples.git
     version: main
   qrb_ros_system_monitor:
     type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_system_monitor
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_system_monitor.git
+    version: main
+  qrb_ros_tensor_process:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_tensor_process.git
     version: main
   qrb_ros_transport:
     type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_transport
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_transport.git
+    version: main
+  qrb_ros_video:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_video.git
     version: main
