@@ -49,3 +49,18 @@ qrb_ros_slam_msgs:
 qrb_ros_vision_msgs:
   ubuntu:
     noble: [ros-jazzy-qrb-ros-vision-msgs]
+qrb_battery_client:
+  ubuntu:
+    noble: [ros-jazzy-qrb-battery-client]
+qrb_camera:
+  ubuntu:
+    noble: [ros-jazzy-qrb-camera]
+camxapi-dev:
+  ubuntu:
+    noble: [qcom-camxapi-dev]
+libqmmf-dev:
+  ubuntu:
+    noble: [libqmmf-dev]
+syslog-plumber-dev:
+  ubuntu:
+    noble: [qcom-syslog-plumber-dev]
