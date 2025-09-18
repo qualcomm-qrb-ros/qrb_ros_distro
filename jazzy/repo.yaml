@@ -27,3 +27,7 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_battery
     version: release/2.0.0
+  dmabuf_transport:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/dmabuf_transport
+    version: release/1.1.0
