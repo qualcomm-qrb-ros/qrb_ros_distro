@@ -115,6 +115,7 @@ jobs:
           echo "Ignore list:" "${ignore_list[@]}"
 
           cd ${WORKSPACE}
+          find . -name "build.sh" -type f -exec bash {} \;
           colcon build --packages-ignore "${ignore_list[@]}" --merge-install --cmake-args \
             -DPython3_ROOT_DIR=${OECORE_TARGET_SYSROOT}/usr \
             -DPython3_NumPy_INCLUDE_DIR=${OECORE_TARGET_SYSROOT}/usr/lib/python3.12/site-packages/numpy/core/include \
