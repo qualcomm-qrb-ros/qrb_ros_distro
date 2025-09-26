@@ -31,3 +31,11 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/dmabuf_transport
     version: release/1.1.0
+  qrb_ros_amr_service:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_amr_service
+    version: release/1.0.4
+  qrb_ros_follow_path_service:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_follow_path_service
+    version: release/1.0.4
