@@ -48,7 +48,7 @@ jobs:
         run: |
           export TARGET_DIR="${PERSIST_DIR}/${MACHINE}-${DISTRO}-${QCOM_SELECTED_BSP}"
           if [ -e ${PERSIST_DIR} ] && [ -r ${PERSIST_DIR} ] && [ -x ${PERSIST_DIR} ];then
-            image_dir=$(find ${TARGET_DIR} -type d -name 'qcom-[0-9]*.[0-9]*.[0-9]*-QLI.[0-9]*.[0-9]*-Ver.[0-9]*.[0-9]*_robotics-product-sdk-[0-9]*.[0-9]' | sort -V | tail -n 1)
+            image_dir=$(find ${TARGET_DIR} -type d -name 'qcom-[0-9]*.[0-9]*.[0-9]*-QLI.[0-9]*.[0-9]*-Ver.[0-9]*.[0-9]*_robotics*-sdk-[0-9]*.[0-9]' | sort -V | tail -n 1)
             sdk_file=$(find ${image_dir} -type f -name "*.sh")
             echo "SDK path: ${image_dir}"
             echo "SDK file: ${sdk_file}"
@@ -124,7 +124,7 @@ jobs:
             -DPython3_NumPy_INCLUDE_DIR=${OECORE_TARGET_SYSROOT}/usr/lib/python3.12/site-packages/numpy/core/include \
             -DPYTHON_SOABI=cpython-312-aarch64-linux-gnu -DCMAKE_STAGING_PREFIX="$(pwd)/install" \
             -DCMAKE_PREFIX_PATH="$(pwd)/install/share" \
-            -DBUILD_TESTING=OFF
+            -DBUILD_TESTING=OFF -DCMAKE_CXX_FLAGS:STRING="-Wno-error=format"
 
       - name: Stage build artifacts for publishing
         continue-on-error: true
