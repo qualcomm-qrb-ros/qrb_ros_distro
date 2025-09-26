@@ -64,3 +64,9 @@ libqmmf-dev:
 syslog-plumber-dev:
   ubuntu:
     noble: [qcom-syslog-plumber-dev]
+libqrb-video-v4l2:
+  ubuntu:
+    noble: [libqrb-video-v4l2-1]
+libqrb-video-v4l2-dev:
+  ubuntu:
+    noble: [libqrb-video-v4l2-dev]
