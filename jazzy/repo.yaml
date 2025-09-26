@@ -51,3 +51,7 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_color_space_convert
     version: release/0.1.0
+  libqrc:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/libqrc
+    version: release/1.1.1
