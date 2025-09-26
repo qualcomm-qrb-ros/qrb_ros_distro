@@ -14,7 +14,8 @@ env:
   WORKSPACE: ${{ github.workspace }}/ros_ws
   SDK_DIR: ${{ github.workspace }}/sdk
   QCOM_SELECTED_BSP: custom
-  DEPENDENCIES: "qualcomm-qrb-ros/ros2_benchmark qualcomm-qrb-ros/libqrc"
+  DEPENDENCIES: |
+    qualcomm-qrb-ros/ros2_benchmark
 
 jobs:
   build:
@@ -70,6 +71,7 @@ jobs:
           ref: ${{ github.event_name == 'schedule' && 'develop' || github.event_name == 'workflow_dispatch'  && 'develop' || null }}
 
       - name: Download source depdencies
+        shell: bash
         run: |
           IFS=' ' read -ra repos <<< "$DEPENDENCIES"
           for repo in "${repos[@]}"; do

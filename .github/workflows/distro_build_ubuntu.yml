@@ -14,6 +14,8 @@ jobs:
     env:
         ROS_WS: ${{ github.workspace }}/ros2_ws/
         ROS_SRC: ${{ github.workspace }}/ros2_ws/src
+        DEPENDENCIES: |
+          qualcomm-qrb-ros/ros2_benchmark
     steps:
       - name: Update and install extra packages
         run: |
@@ -46,6 +48,14 @@ jobs:
           source /opt/ros/jazzy/setup.sh
           sudo rosdep update
           sudo rosdep install -y --rosdistro jazzy --from-paths ${ROS_SRC} --ignore-src
+
+      - name: Download source depdencies
+        shell: bash
+        run: |
+          IFS=' ' read -ra repos <<< "$DEPENDENCIES"
+          for repo in "${repos[@]}"; do
+            git clone https://github.com/${repo}.git ${ROS_SRC}/${repo#*/} || true
+          done
 
       - name: Build ROS packages
         shell: bash
