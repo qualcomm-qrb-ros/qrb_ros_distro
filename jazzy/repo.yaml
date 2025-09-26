@@ -15,6 +15,10 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_system_monitor
     version: 1.1.1-jazzy
+  qrb_ros_follow_path_service:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_audio_service
+    version: release/1.1.0
   qrb_ros_transport:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_transport
