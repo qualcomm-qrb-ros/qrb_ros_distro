@@ -23,7 +23,7 @@ jobs:
           sudo add-apt-repository ppa:ubuntu-qcom-iot/qcom-ppa
           sudo add-apt-repository ppa:ubuntu-qcom-iot/qirp
           sudo apt update -y && sudo apt upgrade -y
-          sudo apt install -y tree python3-vcstool
+          sudo apt install -y tree python3-vcstool wget
 
       - name: Checkout source code
         uses: actions/checkout@v4
