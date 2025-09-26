@@ -59,3 +59,11 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_video
     version: release/0.1.7
+  qrb_ros_robot_base:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_robot_base
+    version: release/1.2.3
+  libqrc:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/libqrc
+    version: release/1.1.1
