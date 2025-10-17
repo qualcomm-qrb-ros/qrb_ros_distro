@@ -67,3 +67,7 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/libqrc
     version: release/1.1.1
+  qrb_ros_samples:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_samples.git
+    version: release/20251015
