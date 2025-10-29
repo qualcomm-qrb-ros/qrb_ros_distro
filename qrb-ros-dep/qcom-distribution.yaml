@@ -1,6 +1,6 @@
 ncnn:
   ubuntu:
-    noble: [ncnn]
+    noble: [ncnn-dev]
 ncnn-dev:
   ubuntu:
     noble: [ncnn-dev]
