@@ -23,7 +23,11 @@ jobs:
           sudo add-apt-repository ppa:ubuntu-qcom-iot/qcom-ppa
           sudo add-apt-repository ppa:ubuntu-qcom-iot/qirp
           sudo apt update -y && sudo apt upgrade -y
-          sudo apt install -y tree python3-vcstool wget
+          sudo apt install -y tree python3-vcstool wget unzip
+          # Install awscli
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
 
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -61,6 +65,13 @@ jobs:
           mkdir -p $build_dir
 
           tar -cvf "${build_dir}/${{ github.event.repository.name }}-ubuntu-artifacts.tar" --transform "s|^${ROS_WS}/||" -C "${ROS_WS}" install build log
+
+      - name: Upload artifacts to S3 bucket
+        uses: qualcomm-linux/upload-private-artifact-action@aws-v2
+        with:
+          path: ./uploads
+          destination: ${{ github.repository_owner }}/${{ github.event.repository.name }}/${{ github.run_id }}-${{ github.run_attempt }}/
+          s3_bucket: qli-prd-ros-gh-artifacts
 
       - name: Upload private artifacts
         continue-on-error: true
