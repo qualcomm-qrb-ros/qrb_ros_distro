@@ -70,6 +70,9 @@ libqrb-video-v4l2:
 libqrb-video-v4l2-dev:
   ubuntu:
     noble: [libqrb-video-v4l2-dev]
+qrb_video_v4l2_lib:
+  ubuntu:
+    noble: [libqrb-video-v4l2-dev]
 camxapi-dev:
   ubuntu:
     noble: [qcom-camxapi-dev]
