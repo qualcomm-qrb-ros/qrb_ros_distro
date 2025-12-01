@@ -23,3 +23,7 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_samples.git
     version: release/20251015
+  qrb_ros_video:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_video.git
+    version: release/0.1.7
