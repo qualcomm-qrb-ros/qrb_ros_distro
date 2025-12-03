@@ -27,3 +27,15 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_video.git
     version: release/0.1.7
+  qrb_ros_amr_service:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_amr_service
+    version: 1.0.4-jazzy
+  qrb_ros_follow_path_service:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_follow_path_service
+    version: 1.0.4-jazzy
+  libqrc:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/libqrc
+    version: 1.1.1-jazzy
