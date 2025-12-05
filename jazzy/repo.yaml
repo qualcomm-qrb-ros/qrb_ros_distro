@@ -43,6 +43,10 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_battery
     version: 2.0.0
+  qrb_ros_camera:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_camera
+    version: 2.0.1-jazzy
   libqrc:
     type: git
     url: https://github.com/qualcomm-qrb-ros/libqrc
