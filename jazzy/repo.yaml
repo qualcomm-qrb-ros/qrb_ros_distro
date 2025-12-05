@@ -39,6 +39,10 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_imu
     version: 1.4.0
+  qrb_ros_battery:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_battery
+    version: 2.0.0
   libqrc:
     type: git
     url: https://github.com/qualcomm-qrb-ros/libqrc
