@@ -10,7 +10,7 @@ repositories:
   qrb_ros_nn_inference:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_nn_inference
-    version: 1.1.0-jazzy
+    version: v1.2.0
   qrb_ros_system_monitor:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_system_monitor
@@ -26,7 +26,7 @@ repositories:
   qrb_ros_video:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_video.git
-    version: release/0.1.7
+    version: v0.1.7
   qrb_ros_amr_service:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_amr_service
@@ -39,3 +39,11 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/libqrc
     version: 1.1.1-jazzy
+  qrb_ros_benchmark:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_benchmark
+    version: v1.0.0
+  qrb_ros_tensor_process:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_tensor_process
+    version: 1.0.0
