@@ -71,3 +71,7 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_video.git
     version: main
+  qrb_ros_camera:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_camera.git
+    version: main
