@@ -63,3 +63,7 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_tensor_process
     version: 1.0.0
+  qrb_ros_robot_base:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_robot_base
+    version: 1.2.3
