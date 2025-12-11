@@ -51,6 +51,12 @@ jobs:
           sudo rosdep update
           sudo rosdep install -y --rosdistro jazzy --from-paths ${ROS_SRC} --ignore-src
 
+      - name: Set GitHub env
+        shell: bash
+        run: |
+          echo "LD_LIBRARY_PATH=/usr/lib/qcm6490:${LD_LIBRARY_PATH}" >> $GITHUB_ENV
+          echo "LIBRARY_PATH=/usr/lib/qcm6490:${LIBRARY_PATH}" >> $GITHUB_ENV
+
       - name: Build ROS packages
         shell: bash
         run: |
