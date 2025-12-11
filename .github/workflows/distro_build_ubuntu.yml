@@ -71,6 +71,9 @@ jobs:
         run: |
           cd ${ROS_WS}
           source /opt/ros/jazzy/setup.sh
+          # Temporary solution for qmmf dependency issue
+          export LD_LIBRARY_PATH=/usr/lib/qcm6490:$LD_LIBRARY_PATH
+          export LIBRARY_PATH=/usr/lib/qcm6490:$LIBRARY_PATH    
           colcon build --continue-on-error
 
       - name: Stage build artifacts for publishing
