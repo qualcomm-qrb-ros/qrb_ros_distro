@@ -114,3 +114,9 @@ qrb_colorspace_convert_lib:
   ubuntu: [ros-jazzy-qrb-colorspace-convert-lib]
 qrb_ros_colorspace_convert:
   ubuntu: [ros-jazzy-qrb-ros-colorspace-convert]
+ocr_service:
+  ubuntu:
+    noble: [ros-jazzy-ocr-service]
+ocr_msg:
+  ubuntu: 
+    noble: [ros-jazzy-ocr-msg]
