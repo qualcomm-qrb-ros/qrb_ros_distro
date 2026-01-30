@@ -98,22 +98,9 @@ jobs:
           echo "latest_manifest: ${latest_manifest}."
 
           echo "manifest=${latest_manifest}" >> "$GITHUB_OUTPUT"
-
-          # Temporary configuration since git.yoctoproject.org is unavailable.
-          git config --global url.https://github.com/yoctoproject/poky.insteadOf https://git.yoctoproject.org/poky
-          git config --global url.https://github.com/distro-core-curated-mirrors/meta-selinux.insteadOf https://git.yoctoproject.org/meta-selinux
-          git config --global url.https://github.com/lmp-mirrors/meta-virtualization.insteadOf https://git.yoctoproject.org/meta-virtualization
-          git config --global url.https://github.com/lmp-mirrors/meta-security.insteadOf https://git.yoctoproject.org/meta-security
-          git config --global url.https://git.codelinaro.org/clo/ype/external/yoctoproject.org/meta-tensorflow.insteadOf https://git.yoctoproject.org/meta-tensorflow
           
           repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m ${latest_manifest}
           repo sync -c -j8
-          
-          git config --global --unset url.https://github.com/yoctoproject/poky.insteadOf
-          git config --global --unset url.https://github.com/distro-core-curated-mirrors/meta-selinux.insteadOf
-          git config --global --unset url.https://github.com/lmp-mirrors/meta-virtualization.insteadOf
-          git config --global --unset url.https://github.com/lmp-mirrors/meta-security.insteadOf
-          git config --global --unset url.https://git.codelinaro.org/clo/ype/external/yoctoproject.org/meta-tensorflow.insteadOf
           
       - name: Custom build
         if: ${{ github.event.inputs.custom_build_cmd != '' }}
