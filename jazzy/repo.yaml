@@ -2,23 +2,23 @@ repositories:
   lib_mem_dmabuf:
     type: git
     url: https://github.com/qualcomm-qrb-ros/lib_mem_dmabuf
-    version: 1.1.1-jazzy
+    version: release/1.1.2
   qrb_ros_interfaces:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_interfaces
-    version: 1.0.0
+    version: release/2.0.0
   qrb_ros_nn_inference:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_nn_inference
-    version: v1.2.0
+    version: release/1.3.0
   qrb_ros_system_monitor:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_system_monitor
-    version: 1.1.1-jazzy
+    version: release/1.1.2
   qrb_ros_transport:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_transport
-    version: 1.3.1-jazzy
+    version: release/1.3.2
   dmabuf_transport:
     type: git
     url: https://github.com/qualcomm-qrb-ros/dmabuf_transport
@@ -26,7 +26,7 @@ repositories:
   qrb_ros_samples:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_samples.git
-    version: 20251015
+    version: release/20260417
   qrb_ros_video:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_video.git
@@ -50,11 +50,11 @@ repositories:
   qrb_ros_camera:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_camera
-    version: 2.0.1-jazzy
+    version: release/2.0.2
   libqrc:
     type: git
     url: https://github.com/qualcomm-qrb-ros/libqrc
-    version: 1.1.1-jazzy
+    version: release/1.1.2
   qrb_ros_benchmark:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_benchmark
@@ -66,4 +66,8 @@ repositories:
   qrb_ros_robot_base:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_robot_base
-    version: 1.2.3
+    version: release/1.2.4
+  qrb_ros_color_space_convert:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_color_space_convert
+    version: release/1.0.1
