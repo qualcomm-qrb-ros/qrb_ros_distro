@@ -34,7 +34,7 @@ jobs:
         with:
           fetch-depth: 0
           path: ${{ env.ROS_SRC }}/${{ github.event.repository.name }}
-          ref: ${{ github.event_name == 'schedule' && 'develop' || github.event_name == 'workflow_dispatch'  && 'develop' || null }}
+          ref: ${{ github.event_name == 'schedule' && 'develop' || null }}
 
       - name: Download Source
         run: |
@@ -73,7 +73,7 @@ jobs:
           tar -cvf "${build_dir}/${{ github.event.repository.name }}-ubuntu-artifacts.tar" --transform "s|^${ROS_WS}/||" -C "${ROS_WS}" install
 
       - name: Upload artifacts to S3 bucket
-        uses: qualcomm-linux/upload-private-artifact-action@aws-v2
+        uses: qualcomm-linux/upload-private-artifact-action@aws-v4
         with:
           path: ./uploads
           destination: ${{ github.repository_owner }}/${{ github.event.repository.name }}/${{ github.run_id }}-${{ github.run_attempt }}/
