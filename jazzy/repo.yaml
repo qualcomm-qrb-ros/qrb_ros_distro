@@ -1,40 +1,40 @@
 repositories:
-  lib_mem_dmabuf:
-    type: git
-    url: https://github.com/qualcomm-qrb-ros/lib_mem_dmabuf
-    version: release/1.1.2
-  qrb_ros_interfaces:
-    type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_interfaces
-    version: release/2.0.0
-  qrb_ros_nn_inference:
-    type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_nn_inference
-    version: release/1.3.0
-  qrb_ros_system_monitor:
-    type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_system_monitor
-    version: release/1.1.2
-  qrb_ros_transport:
-    type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_transport
-    version: release/1.3.2
   dmabuf_transport:
     type: git
     url: https://github.com/qualcomm-qrb-ros/dmabuf_transport
     version: 1.1.0
-  qrb_ros_samples:
+  lib_mem_dmabuf:
     type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_samples.git
-    version: release/20260417
-  qrb_ros_video:
+    url: https://github.com/qualcomm-qrb-ros/lib_mem_dmabuf
+    version: release/1.1.2
+  libqrc:
     type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_video.git
-    version: v0.1.7
+    url: https://github.com/qualcomm-qrb-ros/libqrc
+    version: release/1.1.2
+  ocr_service:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/ocr_service
+    version: release/1.0.1
   qrb_ros_amr_service:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_amr_service
     version: 1.0.4-jazzy
+  qrb_ros_battery:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_battery
+    version: 2.0.0
+  qrb_ros_benchmark:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_benchmark
+    version: v1.0.0
+  qrb_ros_camera:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_camera
+    version: release/2.0.2
+  qrb_ros_color_space_convert:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_color_space_convert
+    version: release/1.0.1
   qrb_ros_follow_path_service:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_follow_path_service
@@ -43,35 +43,35 @@ repositories:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_imu
     version: 1.4.0
-  qrb_ros_battery:
+  qrb_ros_interfaces:
     type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_battery
-    version: 2.0.0
-  qrb_ros_camera:
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_interfaces
+    version: release/2.0.0
+  qrb_ros_nn_inference:
     type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_camera
-    version: release/2.0.2
-  libqrc:
-    type: git
-    url: https://github.com/qualcomm-qrb-ros/libqrc
-    version: release/1.1.2
-  qrb_ros_benchmark:
-    type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_benchmark
-    version: v1.0.0
-  qrb_ros_tensor_process:
-    type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_tensor_process
-    version: 1.0.0
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_nn_inference
+    version: release/1.3.0
   qrb_ros_robot_base:
     type: git
     url: https://github.com/qualcomm-qrb-ros/qrb_ros_robot_base
     version: release/1.2.4
-  qrb_ros_color_space_convert:
+  qrb_ros_samples:
     type: git
-    url: https://github.com/qualcomm-qrb-ros/qrb_ros_color_space_convert
-    version: release/1.0.1
-  ocr_service:
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_samples.git
+    version: release/20260417
+  qrb_ros_system_monitor:
     type: git
-    url: https://github.com/qualcomm-qrb-ros/ocr_service
-    version: release/1.0.1
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_system_monitor
+    version: release/1.1.2
+  qrb_ros_tensor_process:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_tensor_process
+    version: 1.0.0
+  qrb_ros_transport:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_transport
+    version: release/1.3.2
+  qrb_ros_video:
+    type: git
+    url: https://github.com/qualcomm-qrb-ros/qrb_ros_video.git
+    version: v0.1.7
