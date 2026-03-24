@@ -1,0 +1,18 @@
+name: Test
+
+on:
+  pull_request:
+  push: 
+
+env:
+  PERSIST_DIR: /efs/gh-runners/qualcomm-qrb-ros
+  DL_DIR: /efs/gh-runners/qualcomm-qrb-ros/downloads
+
+jobs:
+  build-sdk:
+    runs-on: [self-hosted, qcom-u2404, amd64, amd64-16x]
+    timeout-minutes: 7200
+    steps:
+      - name: Check Download
+        run: |
+         wget -v https://github.com/abseil/abseil-cpp/archive/refs/tags/20250814.0.zip
