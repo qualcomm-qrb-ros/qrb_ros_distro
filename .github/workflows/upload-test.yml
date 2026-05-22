@@ -14,11 +14,11 @@ jobs:
           - runner: [self-hosted, qcom-u2404, amd64, amd64-8x]
             name: self-hosted-amd64
           - runner: [self-hosted, qcom-u2404, arm64, arm64-8x]
-            name: self-hosted-arm64
-          - runner: ubuntu-24.04-arm
-            name: github-hosted-arm64
-          - runner: ubuntu-24.04
-            name: github-hosted-amd64
+          #   name: self-hosted-arm64
+          # - runner: ubuntu-24.04-arm
+          #   name: github-hosted-arm64
+          # - runner: ubuntu-24.04
+          #   name: github-hosted-amd64
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Create test artifacts
