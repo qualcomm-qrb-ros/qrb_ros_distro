@@ -1,0 +1,49 @@
+name: Test upload-artifact action
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+
+jobs:
+  test-upload:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: [self-hosted, qcom-u2404, amd64, amd64-8x]
+            name: self-hosted-amd64
+          - runner: [self-hosted, qcom-u2404, arm64, arm64-8x]
+            name: self-hosted-arm64
+          - runner: ubuntu-24.04-arm
+            name: github-hosted-arm64
+          - runner: ubuntu-24.04
+            name: github-hosted-amd64
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: Create test artifacts
+        run: |
+          mkdir -p ./uploads
+          echo "test-artifact-$(date +%s)" > ./uploads/test.txt
+
+      - name: Upload artifacts
+        id: upload
+        uses: qualcomm-qrb-ros/qrb_ros_gh_actions/.github/actions/upload-artifact@feat-upload-artifact
+        with:
+          path: ./uploads
+          destination: qualcomm-qrb-ros/upload-artifact-test/${{ matrix.name }}/${{ github.run_id }}-${{ github.run_attempt }}/
+          s3_bucket: qli-prd-ros-gh-artifacts
+          retention: 15d
+
+      - name: Verify retention tag
+        env:
+          S3_BUCKET: qli-prd-ros-gh-artifacts
+          S3_KEY: qualcomm-qrb-ros/upload-artifact-test/${{ matrix.name }}/${{ github.run_id }}-${{ github.run_attempt }}/test.txt
+        run: |
+          tag=$(aws s3api get-object-tagging \
+            --bucket "$S3_BUCKET" \
+            --key "$S3_KEY" \
+            --query 'TagSet[?Key==`retention`].Value' \
+            --output text)
+          echo "retention tag: $tag"
+          [ "$tag" = "15d" ] || { echo "ERROR: expected retention=15d, got '$tag'"; exit 1; }
