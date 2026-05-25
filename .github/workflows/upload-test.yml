@@ -14,7 +14,7 @@ jobs:
           - runner: [self-hosted, qcom-u2404, amd64, amd64-8x]
             name: self-hosted-amd64
           - runner: [self-hosted, qcom-u2404, arm64, arm64-8x]
-          #   name: self-hosted-arm64
+            name: self-hosted-arm64
           # - runner: ubuntu-24.04-arm
           #   name: github-hosted-arm64
           # - runner: ubuntu-24.04
@@ -31,14 +31,14 @@ jobs:
         uses: qualcomm-qrb-ros/qrb_ros_gh_actions/.github/actions/upload-artifact@feat-upload-artifact
         with:
           path: ./uploads
-          destination: qualcomm-qrb-ros/upload-artifact-test/${{ matrix.name }}/${{ github.run_id }}-${{ github.run_attempt }}/
+          destination: ${{ github.repository_owner }}/${{ github.event.repository.name }}/${{ github.run_id }}-${{ github.run_attempt }}/
           s3_bucket: qli-prd-ros-gh-artifacts
           retention: 15d
 
       - name: Verify retention tag
         env:
           S3_BUCKET: qli-prd-ros-gh-artifacts
-          S3_KEY: qualcomm-qrb-ros/upload-artifact-test/${{ matrix.name }}/${{ github.run_id }}-${{ github.run_attempt }}/test.txt
+          S3_KEY: ${{ github.repository_owner }}/${{ github.event.repository.name }}/${{ github.run_id }}-${{ github.run_attempt }}/test.txt
         run: |
           tag=$(aws s3api get-object-tagging \
             --bucket "$S3_BUCKET" \
@@ -48,7 +48,17 @@ jobs:
           echo "retention tag: $tag"
           [ "$tag" = "15d" ] || { echo "ERROR: expected retention=15d, got '$tag'"; exit 1; }
 
-  test-upload-ros-jazzy:
+      - name: Verify outputs
+        run: |
+          url="${{ steps.upload.outputs.url }}"
+          files="${{ steps.upload.outputs.files }}"
+          [ -n "$url" ] || { echo "ERROR: url output is empty"; exit 1; }
+          [ -n "$files" ] || { echo "ERROR: files output is empty"; exit 1; }
+          echo "$files" | grep -q "test.txt" || { echo "ERROR: test.txt not in files output"; exit 1; }
+          echo "url: $url"
+          echo "files: $files"
+
+  test-upload-ros-container:
     runs-on: [self-hosted, qcom-u2404, amd64, amd64-8x]
     container:
       image: ros:jazzy
@@ -66,14 +76,14 @@ jobs:
         uses: qualcomm-qrb-ros/qrb_ros_gh_actions/.github/actions/upload-artifact@feat-upload-artifact
         with:
           path: ./uploads
-          destination: qualcomm-qrb-ros/upload-artifact-test/ros-jazzy/${{ github.run_id }}-${{ github.run_attempt }}/
+          destination: ${{ github.repository_owner }}/${{ github.event.repository.name }}/${{ github.run_id }}-${{ github.run_attempt }}/ros-jazzy/
           s3_bucket: qli-prd-ros-gh-artifacts
           retention: 15d
 
       - name: Verify retention tag
         env:
           S3_BUCKET: qli-prd-ros-gh-artifacts
-          S3_KEY: qualcomm-qrb-ros/upload-artifact-test/ros-jazzy/${{ github.run_id }}-${{ github.run_attempt }}/test.txt
+          S3_KEY: ${{ github.repository_owner }}/${{ github.event.repository.name }}/${{ github.run_id }}-${{ github.run_attempt }}/ros-jazzy/test.txt
         run: |
           tag=$(aws s3api get-object-tagging \
             --bucket "$S3_BUCKET" \
@@ -82,3 +92,31 @@ jobs:
             --output text)
           echo "retention tag: $tag"
           [ "$tag" = "15d" ] || { echo "ERROR: expected retention=15d, got '$tag'"; exit 1; }
+
+      - name: Verify outputs
+        run: |
+          url="${{ steps.upload.outputs.url }}"
+          files="${{ steps.upload.outputs.files }}"
+          [ -n "$url" ] || { echo "ERROR: url output is empty"; exit 1; }
+          [ -n "$files" ] || { echo "ERROR: files output is empty"; exit 1; }
+          echo "$files" | grep -q "test.txt" || { echo "ERROR: test.txt not in files output"; exit 1; }
+          echo "url: $url"
+          echo "files: $files"
+
+  test-write-summary-false:
+    runs-on: [self-hosted, qcom-u2404, amd64, amd64-8x]
+    steps:
+      - name: Create test artifacts
+        run: |
+          mkdir -p ./uploads
+          echo "test-artifact-$(date +%s)" > ./uploads/test.txt
+
+      - name: Upload artifacts with write-summary disabled
+        id: upload
+        uses: qualcomm-qrb-ros/qrb_ros_gh_actions/.github/actions/upload-artifact@feat-upload-artifact
+        with:
+          path: ./uploads
+          destination: ${{ github.repository_owner }}/${{ github.event.repository.name }}/${{ github.run_id }}-${{ github.run_attempt }}/
+          s3_bucket: qli-prd-ros-gh-artifacts
+          retention: 15d
+          write-summary: "false"
