@@ -33,8 +33,10 @@ jobs:
           ref: ${{ github.event_name == 'schedule' && 'develop' || null }}
 
       - name: Download Source
+        env:
+          REPO_NAME: ${{ github.event.repository.name }}
         run: |
-          vcs import --input ${ROS_SRC}/${{ github.event.repository.name }}/jazzy/repo.yaml ${ROS_SRC}
+          vcs import --input ${ROS_SRC}/${REPO_NAME}/jazzy/repo.yaml ${ROS_SRC}
 
       - name: Check ROS dependency
         shell: bash
@@ -61,11 +63,13 @@ jobs:
           colcon build
 
       - name: Stage build artifacts for publishing
+        env:
+          REPO_NAME: ${{ github.event.repository.name }}
         run: |
           build_dir=./uploads
           mkdir -p $build_dir
 
-          tar -cvf "${build_dir}/${{ github.event.repository.name }}-ubuntu-artifacts.tar" --transform "s|^${ROS_WS}/||" -C "${ROS_WS}" install
+          tar -cvf "${build_dir}/${REPO_NAME}-ubuntu-artifacts.tar" --transform "s|^${ROS_WS}/||" -C "${ROS_WS}" install
 
       - name: Upload artifacts to S3 bucket
         uses: qualcomm-qrb-ros/qrb_ros_gh_actions/.github/actions/upload-artifact@main
