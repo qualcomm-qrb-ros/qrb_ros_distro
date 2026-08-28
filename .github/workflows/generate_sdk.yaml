@@ -81,9 +81,12 @@ jobs:
           fi
 
       - name: Set enviroment variables
+        env:
+          MATRIX_MACHINE: ${{ matrix.machine }}
+          MATRIX_DISTRO: ${{ matrix.distro }}
         run: |
-          echo "MACHINE=${{ matrix.machine }}" >> $GITHUB_ENV
-          echo "DISTRO=${{ matrix.distro }}" >> $GITHUB_ENV
+          echo "MACHINE=${MATRIX_MACHINE}" >> $GITHUB_ENV
+          echo "DISTRO=${MATRIX_DISTRO}" >> $GITHUB_ENV
 
       - name: Sync source tree
         id: sync_src
@@ -104,13 +107,15 @@ jobs:
           
       - name: Custom build
         if: ${{ github.event.inputs.custom_build_cmd != '' }}
+        env:
+          CUSTOM_BUILD_CMD: ${{ github.event.inputs.custom_build_cmd }}
         run: |
           if [ -e ${DL_DIR} ] && [ -r ${DL_DIR} ] && [ -w ${DL_DIR} ];then
             ln -s ${DL_DIR} ./downloads
           fi
           # Todo: no machine and distro
           source setup-robotics-environment
-          ${{ github.event.inputs.custom_build_cmd }}
+          ${CUSTOM_BUILD_CMD}
 
       - name: Full compilation
         env:
@@ -131,7 +136,7 @@ jobs:
           source setup-robotics-environment build-${MACHINE}-${DISTRO}-${QCOM_SELECTED_BSP}
 
           # Temporay patch
-          echo -e '\ndo_configure[network] = "1"' >> "${{ github.workspace }}"/layers/meta-ros/meta-ros2-jazzy/recipes-bbappends/rosbag2-storage-mcap/mcap-vendor_0.26.5-1.bbappend
+          echo -e '\ndo_configure[network] = "1"' >> "${GITHUB_WORKSPACE}"/layers/meta-ros/meta-ros2-jazzy/recipes-bbappends/rosbag2-storage-mcap/mcap-vendor_0.26.5-1.bbappend
           # Temporay patch
 
           bitbake qcom-robotics-full-image
@@ -139,9 +144,11 @@ jobs:
 
       - name: Deploy SDK
         if: env.DEPLOY_SDK
+        env:
+          SYNC_MANIFEST: ${{ steps.sync_src.outputs.manifest }}
         run: |
           export TARGET_DIR="${PERSIST_DIR}/${MACHINE}-${DISTRO}-${QCOM_SELECTED_BSP}"
-          manifest_name=$(basename ${{ steps.sync_src.outputs.manifest }} .xml)
+          manifest_name=$(basename "${SYNC_MANIFEST}" .xml)
           export SDK_DIR="${TARGET_DIR}"/${manifest_name}/
           echo "manifest_name=${manifest_name}, SDK_DIR=${SDK_DIR}"
           set -x
