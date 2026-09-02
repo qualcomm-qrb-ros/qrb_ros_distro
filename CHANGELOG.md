@@ -1,4 +1,24 @@
 
+# 0.5.0 (2026-09-02)
+## Added
+- No new repo added.
+
+## Changed
+| Repo Name | 0.4.0 Version | 0.5.0 Version |
+| --- | --- | --- |
+| dmabuf_transport | 1.1.0 | 1.1.1 |
+| lib_mem_dmabuf | 1.1.2 | 1.1.3 |
+| qrb_ros_color_space_convert | 1.0.1 | 1.0.2 |
+| qrb_ros_interfaces | 2.0.0 | 2.0.1 |
+| qrb_ros_nn_inference | 1.3.0 | 1.4.0 |
+| qrb_ros_samples | 20251015 | 20260814 |
+| qrb_ros_system_monitor | 1.1.2 | 1.1.3 |
+| qrb_ros_transport | 1.3.2 | 1.4.0 |
+| qrb_ros_video | v0.1.7 | 0.1.8 |
+
+## Removed
+- No repo removed.
+
 # 0.2.0 (2025-09-01)
 ## Added
 - No new repo added.
