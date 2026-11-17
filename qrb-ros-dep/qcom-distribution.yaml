@@ -13,15 +13,19 @@ dmabuf_transport:
 libqnn1:
   ubuntu:
     noble: [libqnn1]
+    resolute: [libqnn1]
 libqnn-dev:
   ubuntu:
     noble: [libqnn-dev]
+    resolute: [libqnn-dev]
 libtensorflow-lite-c-qcom1:
   ubuntu:
     noble: [libtensorflow-lite-c-qcom1]
+    resolute: [libtensorflow-lite-c-qcom2]
 libtensorflow-lite-qcom-dev:
   ubuntu:
     noble: [libtensorflow-lite-qcom-dev]
+    resolute: [libtensorflow-lite-qcom-dev]
 lib_mem_dmabuf:
   ubuntu:
     noble: [ros-jazzy-lib-mem-dmabuf]
@@ -76,18 +80,22 @@ qrb_video_v4l2_lib:
 camxapi-dev:
   ubuntu:
     noble: [qcom-camxapi-dev]
+    resolute: [libcamx-dev]
 libqmmf-dev:
   ubuntu:
     noble: [libqmmf-dev]
+    resolute: [libqmmf-dev]
 syslog-plumber-dev:
   ubuntu:
     noble: [qcom-syslog-plumber-dev]
 camera-server:
   ubuntu:
     noble: [qcom-camera-server]
+    resolute: [qcom-camera-server]
 qcom-adreno-dev:
   ubuntu:
     noble: [qcom-adreno-dev]
+    resolute: [qcom-adreno-dev]
 ros2_benchmark_interfaces:
   ubuntu: [ros-jazzy-ros2-benchmark-interfaces]
 ros2_benchmark:
@@ -98,10 +106,6 @@ qrb_ros_audio_common_msgs:
   ubuntu: [ros-jazzy-qrb-ros-audio-common-msgs]
 qrb_ros_audio_service_msgs:
   ubuntu: [ros-jazzy-qrb-ros-audio-service-msgs]
-qrb_audio_common_lib:
-  ubuntu: [qrb-audio-common-lib]
-qrb_audio_manager:
-  ubuntu: [qrb-audio-manager]
 qrb_audio_common_lib:
   ubuntu: [qrb-audio-common-lib]
 qrb_audio_manager:
@@ -118,5 +122,324 @@ ocr_service:
   ubuntu:
     noble: [ros-jazzy-ocr-service]
 ocr_msg:
-  ubuntu: 
+  ubuntu:
     noble: [ros-jazzy-ocr-msg]
+
+# QIRP PPA: ROS packages
+orbbec_camera:
+  ubuntu:
+    noble: [ros-jazzy-orbbec-camera]
+orbbec_camera_msgs:
+  ubuntu:
+    noble: [ros-jazzy-orbbec-camera-msgs]
+qcom_cartographer:
+  ubuntu:
+    noble: [ros-jazzy-qcom-cartographer]
+qcom_cartographer_ros:
+  ubuntu:
+    noble: [ros-jazzy-qcom-cartographer-ros]
+qrb_amr_manager:
+  ubuntu:
+    noble: [ros-jazzy-qrb-amr-manager]
+qrb_battery_client:
+  ubuntu:
+    noble: [ros-jazzy-qrb-battery-client]
+qrb_camera:
+  ubuntu:
+    noble: [ros-jazzy-qrb-camera]
+qrb_colorspace_convert_lib_opencv:
+  ubuntu:
+    noble: [ros-jazzy-qrb-colorspace-convert-lib-opencv]
+qrb_follow_path_manager:
+  ubuntu:
+    noble: [ros-jazzy-qrb-follow-path-manager]
+qrb_inference_manager:
+  ubuntu:
+    noble: [ros-jazzy-qrb-inference-manager]
+qrb_ros_amr:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-amr]
+qrb_ros_amr_msgs:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-amr-msgs]
+qrb_ros_audio_common:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-audio-common]
+qrb_ros_audio_service:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-audio-service]
+qrb_ros_battery:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-battery]
+qrb_ros_colorspace_convert_opencv:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-colorspace-convert-opencv]
+qrb_ros_follow_path:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-follow-path]
+qrb_ros_image_resize_opencv:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-image-resize-opencv]
+qrb_ros_imu:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-imu]
+qrb_ros_navigation_msgs:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-navigation-msgs]
+qrb_ros_robot_base_msgs:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-robot-base-msgs]
+qrb_ros_system_monitor:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-system-monitor]
+qrb_ros_video:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-video]
+qrb_ros_video_test:
+  ubuntu:
+    noble: [ros-jazzy-qrb-ros-video-test]
+rplidar_ros:
+  ubuntu:
+    noble: [ros-jazzy-rplidar-ros]
+rv_auto_exploration:
+  ubuntu:
+    noble: [ros-jazzy-rv-auto-exploration]
+sample_apriltag:
+  ubuntu:
+    noble: [ros-jazzy-sample-apriltag]
+sample_depth_estimation:
+  ubuntu:
+    noble: [ros-jazzy-sample-depth-estimation]
+sample_face_detection:
+  ubuntu:
+    noble: [ros-jazzy-sample-face-detection]
+sample_hand_detection:
+  ubuntu:
+    noble: [ros-jazzy-sample-hand-detection]
+sample_hrnet_pose_estimation:
+  ubuntu:
+    noble: [ros-jazzy-sample-hrnet-pose-estimation]
+sample_object_detection:
+  ubuntu:
+    noble: [ros-jazzy-sample-object-detection]
+sample_object_segmentation:
+  ubuntu:
+    noble: [ros-jazzy-sample-object-segmentation]
+sample_resnet101:
+  ubuntu:
+    noble: [ros-jazzy-sample-resnet101]
+simulation_remote_assistant:
+  ubuntu:
+    noble: [ros-jazzy-simulation-remote-assistant]
+simulation_sample_amr_simple_motion:
+  ubuntu:
+    noble: [ros-jazzy-simulation-sample-amr-simple-motion]
+simulation_sample_pick_and_place:
+  ubuntu:
+    noble: [ros-jazzy-simulation-sample-pick-and-place]
+xsens_mti_ros2_driver:
+  ubuntu:
+    noble: [ros-jazzy-xsens-mti-ros2-driver]
+
+# QIRP PPA: libraries and services
+qcom-battery-client:
+  ubuntu:
+    noble: [qcom-battery-client]
+qcom-battery-client-dev:
+  ubuntu:
+    noble: [qcom-battery-client-dev]
+qcom-battery-service:
+  ubuntu:
+    noble: [qcom-battery-service]
+qcom-sensors-service:
+  ubuntu:
+    noble: [qcom-sensors-service]
+qrb-audio-common-lib-dev:
+  ubuntu:
+    noble: [qrb-audio-common-lib-dev]
+qrb-audio-manager-dev:
+  ubuntu:
+    noble: [qrb-audio-manager-dev]
+
+# QCOM PPA: platform libraries and development packages
+libgbm-msm:
+  ubuntu:
+    noble: [libgbm-msm]
+    resolute: [libgbm-msm]
+libgbm-msm-dev:
+  ubuntu:
+    noble: [libgbm-msm-dev]
+    resolute: [libgbm-msm-dev]
+libqmmf-client:
+  ubuntu:
+    noble: [libqmmf-client]
+    resolute: [libqmmf-client]
+libqmmf-common:
+  ubuntu:
+    noble: [libqmmf-common]
+    resolute: [libqmmf-common]
+libqmmf1:
+  ubuntu:
+    noble: [libqmmf1]
+libsnpe-dev:
+  ubuntu:
+    noble: [libsnpe-dev]
+    resolute: [libsnpe-dev]
+libsnpe1:
+  ubuntu:
+    noble: [libsnpe1]
+    resolute: [libsnpe1]
+libtensorflow-lite-c-qcom2:
+  ubuntu:
+    noble: [libtensorflow-lite-c-qcom2]
+    resolute: [libtensorflow-lite-c-qcom2]
+qcom-adreno-cl-dev:
+  ubuntu:
+    noble: [qcom-adreno-cl-dev]
+    resolute: [qcom-adreno-cl-dev]
+qcom-adreno-common-dev:
+  ubuntu:
+    noble: [qcom-adreno-common-dev]
+    resolute: [qcom-adreno-common-dev]
+qcom-adreno-egl-dev:
+  ubuntu:
+    noble: [qcom-adreno-egl-dev]
+    resolute: [qcom-adreno-egl-dev]
+qcom-adreno-gles-dev:
+  ubuntu:
+    noble: [qcom-adreno-gles-dev]
+    resolute: [qcom-adreno-gles-dev]
+qcom-adreno-vulkan-dev:
+  ubuntu:
+    noble: [qcom-adreno-vulkan-dev]
+    resolute: [qcom-adreno-vulkan-dev]
+qcom-camx:
+  ubuntu:
+    noble: [qcom-camx]
+qcom-dspservices-headers-dev:
+  ubuntu:
+    noble: [qcom-dspservices-headers-dev]
+qcom-fastcv-binaries-dev:
+  ubuntu:
+    noble: [qcom-fastcv-binaries-dev]
+    resolute: [qcom-fastcv-binaries-dev]
+qcom-fastrpc-dev:
+  ubuntu:
+    noble: [qcom-fastrpc-dev]
+    resolute: [libfastrpc-dev]
+qcom-ib2c-dev:
+  ubuntu:
+    noble: [qcom-ib2c-dev]
+qcom-libdiag:
+  ubuntu:
+    noble: [qcom-libdiag]
+    resolute: [qcom-libdiag]
+qcom-libdiag-dev:
+  ubuntu:
+    noble: [qcom-libdiag-dev]
+    resolute: [qcom-libdiag-dev]
+qcom-libdmabufheap:
+  ubuntu:
+    noble: [qcom-libdmabufheap]
+qcom-libdmabufheap-dev:
+  ubuntu:
+    noble: [qcom-libdmabufheap-dev]
+qcom-libqmi-framework:
+  ubuntu:
+    noble: [qcom-libqmi-framework]
+qcom-libqmi-framework-dev:
+  ubuntu:
+    noble: [qcom-libqmi-framework-dev]
+    resolute: [libqmi-framework-dev]
+qcom-libqrtr:
+  ubuntu:
+    noble: [qcom-libqrtr]
+qcom-libqrtr-dev:
+  ubuntu:
+    noble: [qcom-libqrtr-dev]
+qcom-libsecuremsm:
+  ubuntu:
+    noble: [qcom-libsecuremsm]
+qcom-libsecuremsm-dev:
+  ubuntu:
+    noble: [qcom-libsecuremsm-dev]
+qcom-libsecuremsm-features:
+  ubuntu:
+    noble: [qcom-libsecuremsm-features]
+qcom-libsecuremsm-features-dev:
+  ubuntu:
+    noble: [qcom-libsecuremsm-features-dev]
+qcom-libvmmem:
+  ubuntu:
+    noble: [qcom-libvmmem]
+qcom-libvmmem-dev:
+  ubuntu:
+    noble: [qcom-libvmmem-dev]
+qcom-minkipc-dev:
+  ubuntu:
+    noble: [qcom-minkipc-dev]
+    resolute: [libminkipc-dev]
+qcom-property-vault-dev:
+  ubuntu:
+    noble: [qcom-property-vault-dev]
+qcom-sensing-hub-dev:
+  ubuntu:
+    noble: [qcom-sensing-hub-dev]
+    resolute: [qcom-sensing-hub-dev]
+qcom-sensors-api-dev:
+  ubuntu:
+    noble: [qcom-sensors-api-dev]
+    resolute: [qcom-sensors-api-dev]
+qcom-sensors-core-dev:
+  ubuntu:
+    noble: [qcom-sensors-core-dev]
+    resolute: [qcom-sensors-core-dev]
+qcom-sensors-lookup-dev:
+  ubuntu:
+    noble: [qcom-sensors-lookup-dev]
+qcom-sensors-registry-dev:
+  ubuntu:
+    noble: [qcom-sensors-registry-dev]
+    resolute: [qcom-sensors-registry-dev]
+qcom-sensors-services-dev:
+  ubuntu:
+    noble: [qcom-sensors-services-dev]
+    resolute: [qcom-sensors-services-dev]
+qcom-sensors-utils-dev:
+  ubuntu:
+    noble: [qcom-sensors-utils-dev]
+qcom-time-genoff-dev:
+  ubuntu:
+    noble: [qcom-time-genoff-dev]
+qcom-video-ctrl-dev:
+  ubuntu:
+    noble: [qcom-video-ctrl-dev]
+
+# QCOM PPA: resolute-only packages
+libcamx-hamoa-dev:
+  ubuntu:
+    resolute: [libcamx-hamoa-dev]
+libcamx-hamoa1:
+  ubuntu:
+    resolute: [libcamx-hamoa1]
+libfastcvopt-dev:
+  ubuntu:
+    resolute: [libfastcvopt-dev]
+libfastcvopt1:
+  ubuntu:
+    resolute: [libfastcvopt1]
+libfastrpc1:
+  ubuntu:
+    resolute: [libfastrpc1]
+libqcomtee-dev:
+  ubuntu:
+    resolute: [libqcomtee-dev]
+libqmmf-server-lib:
+  ubuntu:
+    resolute: [libqmmf-server-lib]
+qcom-sensors-test-apps-dev:
+  ubuntu:
+    resolute: [qcom-sensors-test-apps-dev]
+qcom-sensors-test-core-dev:
+  ubuntu:
+    resolute: [qcom-sensors-test-core-dev]
